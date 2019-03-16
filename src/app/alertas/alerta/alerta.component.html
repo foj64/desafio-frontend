@@ -1,0 +1,17 @@
+<a [routerLink]="['/alertas', alerta.pontoDeVenda]">
+  <div class="place-info-box">
+    <span class="place-info-box-icon" style="width: 125px;"><img src={{alerta.imagem}}/></span>
+
+    <div class="place-info-box-content">
+      <span class="place-info-box-text">Ponto: {{alerta.pontoDeVenda}}</span>
+      <span class="place-info-box-detail">
+        <b>Descrição:</b> {{alerta.descricao}}<br />
+        <b>Produto:</b> {{alerta.produto}}<br />
+        <b>Categoria:</b> {{alerta.categoria}}<br />
+        <b>Tipo:</b> {{alerta.flTipo}}<br />
+        <b>Margem:</b> {{alerta.margem}}
+      </span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+</a>

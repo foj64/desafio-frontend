@@ -1,0 +1,40 @@
+<!-- INíCIO do CONTEÚDO -->
+<section class="content-header">
+  <h1>
+    Todos os Alertas
+    <a (click)="toggleSearch()" class="search-link pull-right">
+      <span *ngIf="iptSearchPontoDeVenda.value"><small>"{{iptSearchPontoDeVenda.value}} {{iptSearchTipo.value}}"</small> </span> <i class="fa fa-search"></i></a>
+  </h1>
+
+<!-- barra de busca  -->
+<div class="row">
+  <div class="col-xs-12" [@toggleSearch]="searchBarState">
+    <form [formGroup]="searchForm">
+      <div class="form-group">
+        <div class="col-xs-6">
+          <input type="text" #iptSearchPontoDeVenda formControlName="searchControlPontoDeVenda" class="form-control" placeholder="Ponto de Venda:">
+        </div>
+        <div class="col-xs-6">
+          <input type="text" #iptSearchTipo formControlName="searchControlTipo" class="form-control" placeholder="Tipo:">
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+</section>
+
+
+<section class="content">
+  <div *ngFor="let alerta of alertas" class="col-sm-6 col-xs-12">
+    <de-alerta [alerta]="alerta"></de-alerta>
+  </div>
+  <div *ngIf="alertas?.length === 0" class="col-xs-12">
+    <p class="lead text-center">
+      Não encontrados items
+    </p>
+  </div>
+</section>
+<!-- FIM  do CONTEÚDO -->
+
